@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+
+    <title>Band Template</title>
+    <!-- Loading third party fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900" rel="stylesheet" type="text/css">
+    <link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Loading main css file -->
+    <link rel="stylesheet" href="style.css">
+
+    <!--[if lt IE 9]>
+    <script src="js/ie-support/html5.js"></script>
+    <script src="js/ie-support/respond.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+<div id="site-content">
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" id="branding">
+                <img src="images/play_music.png" style="height: 70px; width: 70px;">
+                <small class="site-description">Slogan goes here</small>
+            </a> <!-- #branding -->
+
+            <nav class="main-navigation">
+                <button type="button" class="toggle-menu"><i class="fa fa-bars"></i></button>
+                <ul class="menu">
+                    <li class="menu-item current-menu-item"><a href="/">Home</a></li>
+                    <li class="menu-item"><a href="/artists">View Artist</a></li>
+                    <li class="menu-item"><a href="/AllConcerts">Concerts</a></li>
+                    <li class="menu-item"><a href="/Contact">Contact Us</a></li>
+                    <span th:if="not ${user}">
+                        <li class="menu-item"><a href="/login">Login</a></li>
+                        </span>
+                    <span th:if="${user}">
+                                <li class="menu-item"><a href="/logout">Logout</a></li>
+                                </span>
+
+                </ul> <!-- .menu -->
+            </nav> <!-- .main-navigation -->
+            <div class="mobile-menu"></div>
+        </div>
+    </header> <!-- .site-header -->
+
+    <div class="hero" >
+        <div class="slider">
+            <ul class="slides">
+                <li class="lazy-bg" data-background="dummy/slide-1.jpg">
+                <div class="container">
+                        <h2 class="slide-title">WELCOME TO YOUR ONE AND ONLY</h2>
+                        <h3 class="slide-subtitle">Music Store</h3>
+                        <p class="slide-desc">Get your album here and view every single artist. <br>And get tickets for any upcoming concerts .</p>
+
+                    </div>
+                </li>
+                <li class="lazy-bg" data-background="dummy/slide-2.jpg">
+                    <div class="container">
+                        <h2 class="slide-title">Albums from all around the world</h2>
+                        <h3 class="slide-subtitle">are found here</h3>
+                        <p class="slide-desc">You can also get a preview before bying. <br>This is the deal!</p>
+
+                        <a href="#" class="button cut-corner">Read More</a>
+                    </div>
+                </li>
+                <li class="lazy-bg" data-background="dummy/slide-3.jpg">
+                    <div class="container">
+                        <h2 class="slide-title">Every upcoming concert</h2>
+                        <h3 class="slide-subtitle">will be mentioned down below</h3>
+                        <p class="slide-desc">You can also check the artist concerned<br>So get your ticket!</p>
+
+                        <a href="#" class="button cut-corner">Read More</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <div class="fullwidth-block upcoming-event-section" data-bg-color="#191919">
+            <div class="container">
+                <header class="section-header">
+                    <h2 class="section-title">Upcoming concerts/events</h2>
+
+                    <div class="event-nav">
+                        <a class="prev" id="event-prev" href="#"><i class="fa fa-caret-left"></i></a>
+                        <a class="next" id="event-next" href="#"><i class="fa fa-caret-right"></i></a>
+                    </div> <!-- .event-nav -->
+
+                </header> <!-- .section-header -->
+                <div class="event-carousel">
+
+                    <div class="event">
+                        <div class="entry-date">
+                            <div class="date">20</div>
+                            <span class="month">Sep</span>
+                        </div>
+                        <h2 class="entry-title"><a href="#">Arctic Monkeys tour</a></h2>
+                        <p>Manchester Arena
+                            Arctic Monkeys Tickets</p>
+                    </div> <!-- .event -->
+
+
+                    <div class="event">
+                        <div class="entry-date">
+                            <div class="date">23</div>
+                            <span class="month">Jun</span>
+                        </div>
+                        <h2 class="entry-title"><a href="#">An open door concert for all</a></h2>
+                        <p>Get your tickets for the ultimate open door concert for all, and enjoy good music and great view  </p>
+                    </div> <!-- .event -->
+
+
+                    <div class="event">
+                        <div class="entry-date">
+                            <div class="date">01</div>
+                            <span class="month">Jul</span>
+                        </div>
+                        <h2 class="entry-title"><a href="#">Arctic Monkeys tour</a></h2>
+                        <p>Glasgow Green
+                            Arctic Monkeys Tickets
+                            at TRNSMT Festival</p>
+                    </div> <!-- .event -->
+
+
+                    <div class="event">
+                        <div class="entry-date">
+                            <div class="date">04</div>
+                            <span class="month">jul</span>
+                        </div>
+                        <h2 class="entry-title"><a href="#">Coldplay's tour</a></h2>
+                        <p>Wednesday 15 November 2017
+                            Coldplay
+
+                            Estadio Ciudad de La Plata (Estadio Único), La Plata, Argentina </p>
+                    </div> <!-- .event -->
+
+
+                    <!-- .event -->
+
+                </div> <!-- .event-carousel -->
+            </div> <!-- .container -->
+        </div> <!-- .upcoming-event-section -->
+
+        <div class="fullwidth-block why-chooseus-section">
+            <div class="container">
+                <h2 class="section-title">Why choose us?</h2>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="feature">
+                            <figure class="cut-corner">
+                                <img src="../dummy/medium-image-1.jpg" alt="">
+                            </figure>
+                            <h3 class="feature-title">Similique sunt in culpa qui officia deserunt mollitia animi laborum dolorum</h3>
+                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+                        </div> <!-- .feature -->
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature">
+                            <figure class="cut-corner">
+                                <img src="dummy/medium-image-2.jpg" alt="" />
+                            </figure>
+                            <h3 class="feature-title">Similique sunt in culpa qui officia deserunt mollitia animi laborum dolorum</h3>
+                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+                        </div> <!-- .feature -->
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature">
+                            <figure class="cut-corner">
+                                <img src="../dummy/medium-image-3.jpg" alt="">
+                            </figure>
+                            <h3 class="feature-title">Similique sunt in culpa qui officia deserunt mollitia animi laborum dolorum</h3>
+                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+                        </div> <!-- .feature -->
+                    </div>
+                </div>
+            </div> <!-- .container -->
+        </div> <!-- .why-chooseus-section -->
+    </main> <!-- .main-content -->
+
+    <footer class="site-footer">
+        <div class="container">
+            <address>
+                <p>588 rue de Paris <br><a href="tel:354543543">25478596</a> <br> <a href="mailto:info@musicstore.com">info@musicstore.com</a></p>
+            </address>
+
+            <form action="#" class="newsletter-form">
+                <input type="email" placeholder="Enter your email to join newsletter...">
+                <input type="submit" class="button cut-corner" value="Subscribe">
+            </form> <!-- .newsletter-form -->
+
+        </div>
+    </footer> <!-- .site-footer -->
+
+</div> <!-- #site-content -->
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/app.js"></script>
+
+
+
+
+</body>
+</html>

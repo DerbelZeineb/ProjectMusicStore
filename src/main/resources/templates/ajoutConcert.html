@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>ConcertForm</title>
+</head>
+<body>
+<form th:action="@{/ConcertController}" th:object="${concert}" method="post" >
+    <p>Concert date : <input  th:field="*{date}" id="date"/></p>
+    <p>Concert place: <input  th:field="*{place}" id="place"/></p>
+    <p>Concert time: <input  th:field="*{time}" id="time"/></p>
+    <p>Concert's tikcet price: <input th:field="*{ticketPrice}" name="ticketprice" /></p>
+    <p> <input type="submit" value="Save"/> <input type="reset" value="reset"/> </p>
+</form>
+</body>
+</html>

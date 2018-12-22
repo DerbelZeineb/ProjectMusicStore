@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+
+    <title>Artists</title>
+    <!-- Loading third party fonts -->
+    <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900" rel="stylesheet" type="text/css">
+
+    <link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!-- Loading main css file -->
+    <link rel="stylesheet" href="style.css">
+
+    <!--[if lt IE 9]>
+    <script src="js/ie-support/html5.js"></script>
+    <script src="js/ie-support/respond.js"></script>
+    <![endif]-->
+
+
+</head>
+
+<body>
+
+<div id="site-content">
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" id="branding">
+            </a> <!-- #branding -->
+
+            <nav class="main-navigation">
+                <button type="button" class="toggle-menu"><i class="fa fa-bars"></i></button>
+                <ul class="menu">
+                    <li class="menu-item"><a href="/">Home</a></li>
+                    <li class="menu-item current-menu-item"><a href="/artists">View artists</a></li>
+                    <li class="menu-item"><a href="/AllConcerts">Concerts</a></li>
+                    <div th:if="not ${user}">
+                    <li class="menu-item"><a href="/login">Login</a></li>
+                </div>
+                    <span th:if="${user}">
+                        <li class="menu-item"><a href="/logout">Logout</a></li>
+                    </span>
+                </ul> <!-- .menu -->
+            </nav> <!-- .main-navigation -->
+            <div class="mobile-menu"></div>
+        </div>
+    </header> <!-- .site-header -->
+
+    <main class="main-content">
+        <div class="fullwidth-block gallery">
+            <div class="container">
+                <div class="content fullwidth">
+                    <h2 class="entry-title">Gallery</h2>
+                    <h3 class="entry-title">Concerts</h3>
+                    <div class="container group">
+                        <div class="grid-1-5" th:each = "concert: ${list}">
+                            <h3 style="color: #d63302; font-size:20px" th:text="${concert.date}"><span class="uppercase"></span></h3>
+                            Place
+                            <p th:text="${concert.place}"></p>
+                            Time:
+                            <p th:text="${concert.time}"></p>
+                            Ticket-price:
+                            <p th:text="${concert.ticketPrice}"></p>
+                            <a href="/BuyTicket" class="button">Buy Now</a>
+                            <div th:if="${user.admin}">
+                                <a th:href="@{/delete(id=${concert.getId()})}">Supprimer</a>
+                            </div>
+                        </div>
+                        <div th:if="${user.admin}">
+                            <a href="/ajoutConcert">Ajouter un concert</a>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- .testimonial-section -->
+
+
+    </main> <!-- .main-content -->
+
+    <footer class="site-footer">
+        <div class="container">
+            <img src="dummy/logo-footer.png" alt="Site Name">
+
+            <address>
+                <p>588 rue de Paris <br><a href="tel:354543543">25478596</a> <br> <a href="mailto:info@musicstore.com">info@musicstore.com</a></p>
+            </address>
+
+            <form action="#" class="newsletter-form">
+                <input type="email" placeholder="Enter your email to join newsletter...">
+                <input type="submit" class="button cut-corner" value="Subscribe">
+            </form> <!-- .newsletter-form -->
+
+            <div class="social-links">
+                <a href="#"><i class="fa fa-facebook-square"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-google-plus"></i></a>
+                <a href="#"><i class="fa fa-pinterest"></i></a>
+            </div> <!-- .social-links -->
+        </div>
+    </footer> <!-- .site-footer -->
+
+</div> <!-- #site-content -->
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+
+</html>
