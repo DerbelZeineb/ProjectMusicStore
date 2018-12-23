@@ -5,5 +5,4 @@ jdk: oraclejdk8
 dist: trusty
 
 
-script:
-- mvn clean install -B
+script: mvn clean verify
