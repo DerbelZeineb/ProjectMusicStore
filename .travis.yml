@@ -1,2 +1,10 @@
 language: java
 jdk: oraclejdk8
+
+
+dist: trusty
+
+
+script:
+- ./mvnw clean install -B
+install: true
