@@ -8,3 +8,4 @@ dist: trusty
 script:
 - ./mvnw clean install -B
 install: true
+- ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
